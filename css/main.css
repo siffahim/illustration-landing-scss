@@ -51,7 +51,13 @@ body {
   background-color: #4a4aed;
 }
 
-.navbar-list {
+.header .logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.navbar .navbar-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,8 +65,8 @@ body {
   list-style-type: none;
 }
 
-.navbar-link:link,
-.navbar-link:visited {
+.navbar .navbar-list .navbar-link:link,
+.navbar .navbar-list .navbar-link:visited {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -71,8 +77,8 @@ body {
   letter-spacing: 1px;
 }
 
-.navbar-link:hover,
-.navbar-link:active {
+.navbar .navbar-list .navbar-link:hover,
+.navbar .navbar-list .navbar-link:active {
   color: black;
 }
 
@@ -285,6 +291,7 @@ footer {
   }
   .mobile-navbar-btn {
     display: block;
+    z-index: 999;
   }
   .navbar {
     width: 100%;
@@ -328,6 +335,12 @@ footer {
   }
   .actived .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
     display: block;
+  }
+  .actived .mobile-navbar-btn .mobile-nav-icon[name="close-outline"]:hover {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
   }
   .actived .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
     display: none;
