@@ -1,0 +1,259 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  color: #5b5757;
+}
+
+@font-face {
+  font-family: firstFont;
+  src: url("../fonts/Oswald-Light.ttf");
+}
+
+::-moz-selection {
+  background-color: #bb02ff;
+  color: #fff;
+}
+
+::selection {
+  background-color: #bb02ff;
+  color: #fff;
+}
+
+body {
+  font-family: firstFont;
+}
+
+header nav {
+  background-color: #4a4aed;
+  padding: 10px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav ul a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 3px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header nav ul a:hover {
+  background-color: black;
+}
+
+.banner-container {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../img/1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner-container h1 {
+  font-size: 2em;
+  color: #1d1d1d;
+}
+
+.banner-container h2 {
+  font-size: 3em;
+  color: #6a89fe;
+}
+
+.banner-container p {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.btn1 {
+  background: #4a4aed;
+  color: #fff;
+  border: none;
+  padding: 12px 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: 3px;
+}
+
+.btn2 {
+  background: #4a4aed;
+  color: #fff;
+  border: none;
+  padding: 12px 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: 3px;
+}
+
+.project-overview {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  padding: 40px 100px;
+  text-align: center;
+  background-color: #4a4aed;
+}
+
+.project-overview > div {
+  border-radius: 5px;
+  padding: 12px 0;
+  color: #fff;
+}
+
+.project-overview > div > h1 {
+  font-size: 2em;
+  color: #fff;
+}
+
+.fa-brands {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.about-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 100px;
+}
+
+.about-content {
+  width: 50%;
+  padding: 0 4%;
+}
+
+.about-media {
+  width: 50%;
+}
+
+marquee {
+  background-color: #4a4aed;
+  color: #fff;
+  padding: 10px 10px;
+  letter-spacing: 2px;
+}
+
+.card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  padding: 20px 200px;
+  grid-column-gap: 25px;
+}
+
+.card {
+  background-color: #fff;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 0 10px 10px #ede9e9;
+          box-shadow: 0 0 10px 10px #ede9e9;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  -webkit-clip-path: circle(180px at center 0);
+          clip-path: circle(180px at center 0);
+  text-align: center;
+  position: relative;
+}
+
+.circle p {
+  color: #fff;
+  font-size: 1.5em;
+  padding: 10px 0;
+}
+
+.circle h1 {
+  color: #fff;
+  font-size: 3em;
+  padding: 5px 0;
+}
+
+.card .content {
+  position: absolute;
+  color: black;
+  bottom: 50px;
+  text-align: center;
+}
+
+.sub-btn {
+  background: black;
+  color: #fff;
+  border: none;
+  padding: 12px 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.card:nth-child(1) .circle,
+.card:nth-child(1) .sub-btn {
+  background-color: #ffaf00;
+}
+
+.card:nth-child(2) .circle,
+.card:nth-child(2) .sub-btn {
+  background-color: #4a4aed;
+}
+
+.card:nth-child(3) .circle,
+.card:nth-child(3) .sub-btn {
+  background-color: #da2268;
+}
+
+footer {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  letter-spacing: 1px;
+}
+/*# sourceMappingURL=main.css.map */
