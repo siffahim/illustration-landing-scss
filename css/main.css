@@ -27,13 +27,18 @@ h3 {
   color: #fff;
 }
 
-body {
-  font-family: firstFont;
+html {
+  overflow-x: hidden;
 }
 
-header nav {
-  background-color: #4a4aed;
-  padding: 10px 40px;
+body {
+  font-family: firstFont;
+  overflow-x: hidden;
+}
+
+.header {
+  padding: 0 2rem;
+  height: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,32 +48,48 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #4a4aed;
 }
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
-header nav ul {
-  list-style-type: none;
+.navbar-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 2rem;
+  list-style-type: none;
 }
 
-header nav ul a {
+.navbar-link:link,
+.navbar-link:visited {
+  display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
   color: #fff;
-  padding: 10px 20px;
-  display: block;
-  border-radius: 3px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  font-size: 1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  letter-spacing: 1px;
 }
 
-header nav ul a:hover {
-  background-color: black;
+.navbar-link:hover,
+.navbar-link:active {
+  color: black;
+}
+
+.mobile-navbar-btn {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-nav-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #fff;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
 }
 
 .banner-container {
@@ -173,6 +194,7 @@ marquee {
   color: #fff;
   padding: 10px 10px;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .card-container {
@@ -255,5 +277,89 @@ footer {
   text-align: center;
   padding: 12px 0;
   letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 698px) {
+  .header {
+    position: relative;
+  }
+  .mobile-navbar-btn {
+    display: block;
+  }
+  .navbar {
+    width: 100%;
+    height: 100vh;
+    background-color: #4a4aed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .navbar-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .actived .navbar {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .actived .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+  .actived .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+  .banner-container {
+    background-position: center;
+    padding: 10px 10px;
+  }
+  .card-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    padding: 20px 50px;
+    grid-row-gap: 25px;
+  }
+  .project-overview {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 20px;
+  }
+  .about-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px 10px;
+  }
+  .about-content {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .about-media {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -20,41 +20,60 @@
     color: $color-white;
 }
 
-body {
-    font-family: firstFont;
+html {
+    overflow-x: hidden;
 }
 
-header {
-    nav {
-        background-color: $color-blue;
-        padding: 10px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+body {
+    font-family: firstFont;
+    overflow-x: hidden;
+}
 
-        a {
-            color: $color-white;
-            text-decoration: none;
-        }
+.header {
+    padding: 0 2rem;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-blue;
+}
 
-        ul {
-            list-style-type: none;
-            display: flex;
+.navbar-list {
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+}
 
-            a {
-                text-decoration: none;
-                color: $color-white;
-                padding: 10px 20px;
-                display: block;
-                border-radius: 3px;
-                transition: 0.2s;
-            }
+.navbar-link:link,
+.navbar-link:visited {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 1rem;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
 
-            a:hover {
-                background-color: $color-black;
-            }
-        }
-    }
+.navbar-link:hover,
+.navbar-link:active {
+    color: $color-black;
+}
+
+.mobile-navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-nav-icon {
+    width: 2rem;
+    height: 2rem;
+    color: $color-white;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+    display: none;
 }
 
 .banner-container {
@@ -162,6 +181,7 @@ marquee {
     color: $color-white;
     padding: 10px 10px;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .card-container {
@@ -234,4 +254,86 @@ footer {
     text-align: center;
     padding: 12px 0;
     letter-spacing: 1px;
+}
+
+
+@media only screen and (max-width:698px) {
+
+    .header {
+        position: relative;
+    }
+
+    .mobile-navbar-btn {
+        display: block;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 100vh;
+        background-color: $color-blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: translateX(100%);
+        transition: all 0.3s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .actived .navbar {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .actived .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+        display: block;
+    }
+
+    .actived .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+        display: none;
+    }
+
+    .banner-container {
+        background-position: center;
+        padding: 10px 10px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px 50px;
+        grid-row-gap: 25px;
+    }
+
+    .project-overview {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        padding: 50px 10px;
+    }
+
+    .about-content {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .about-media {
+        width: 100%;
+    }
 }
