@@ -32,8 +32,8 @@ body {
 
 @mixin bodyCircle($pos1, $pos2, $side) {
     content: "";
-    width: 150px;
-    height: 150px;
+    width: 135px;
+    height: 135px;
     background: linear-gradient(145deg, #ffa8a8, #ff7643);
     position: absolute;
     clip-path: circle(50% at center);
@@ -218,11 +218,11 @@ body {
 }
 
 .about-container::before {
-    @include bodyCircle(100px, 250px, left)
+    @include bodyCircle(100px, 200px, left)
 }
 
 .about-container::after {
-    @include bodyCircle(100px, 450px, right)
+    @include bodyCircle(100px, 400px, right)
 }
 
 .about-content {

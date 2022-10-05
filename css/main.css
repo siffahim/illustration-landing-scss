@@ -142,8 +142,8 @@ body {
 
 .banner-container::before {
   content: "";
-  width: 150px;
-  height: 150px;
+  width: 135px;
+  height: 135px;
   background: linear-gradient(145deg, #ffa8a8, #ff7643);
   position: absolute;
   -webkit-clip-path: circle(50% at center);
@@ -154,8 +154,8 @@ body {
 
 .banner-container::after {
   content: "";
-  width: 150px;
-  height: 150px;
+  width: 135px;
+  height: 135px;
   background: linear-gradient(145deg, #ffa8a8, #ff7643);
   position: absolute;
   -webkit-clip-path: circle(50% at center);
@@ -230,26 +230,26 @@ body {
 
 .about-container::before {
   content: "";
-  width: 150px;
-  height: 150px;
+  width: 135px;
+  height: 135px;
   background: linear-gradient(145deg, #ffa8a8, #ff7643);
   position: absolute;
   -webkit-clip-path: circle(50% at center);
           clip-path: circle(50% at center);
   left: -100px;
-  top: 250px;
+  top: 200px;
 }
 
 .about-container::after {
   content: "";
-  width: 150px;
-  height: 150px;
+  width: 135px;
+  height: 135px;
   background: linear-gradient(145deg, #ffa8a8, #ff7643);
   position: absolute;
   -webkit-clip-path: circle(50% at center);
           clip-path: circle(50% at center);
   right: -100px;
-  top: 450px;
+  top: 400px;
 }
 
 .about-content {
@@ -298,8 +298,8 @@ marquee {
 
 .card-container::before {
   content: "";
-  width: 150px;
-  height: 150px;
+  width: 135px;
+  height: 135px;
   background: linear-gradient(145deg, #ffa8a8, #ff7643);
   position: absolute;
   -webkit-clip-path: circle(50% at center);
@@ -310,8 +310,8 @@ marquee {
 
 .card-container::after {
   content: "";
-  width: 150px;
-  height: 150px;
+  width: 135px;
+  height: 135px;
   background: linear-gradient(145deg, #ffa8a8, #ff7643);
   position: absolute;
   -webkit-clip-path: circle(50% at center);
