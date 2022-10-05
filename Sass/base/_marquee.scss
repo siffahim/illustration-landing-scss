@@ -1,0 +1,10 @@
+@import '../util/index';
+
+marquee {
+    width: 90%;
+    background-color: $color-blue;
+    color: $color-white;
+    padding: 6px 0px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

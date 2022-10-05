@@ -1,5 +1,5 @@
 @import "./base/index";
-@import "./util/colors";
+@import "./util/index";
 
 // @forward and @use another option to use partials [ @use "colors" as cl ](when use colors file. name must be use)
 
@@ -16,7 +16,7 @@
 }
 
 ::selection {
-    background-color: $color-purple;
+    background-color: $color-blue-two;
     color: $color-white;
 }
 
@@ -120,7 +120,6 @@ body {
     padding: 0 100px;
     display: flex;
     align-items: center;
-    position: relative;
 
     h1 {
         font-size: 2em;
@@ -154,6 +153,9 @@ body {
     padding: 12px 15px;
     text-transform: uppercase;
     font-weight: 400;
+    position: relative;
+    overflow: hidden;
+    z-index: 999;
 
     @if $type ==reactangel {
         border-radius: 3px;
@@ -168,13 +170,41 @@ body {
     }
 }
 
+
+
 .btn1 {
-    @include btn($color-blue, $color-white, reactangel)
+    @include btn($color-blue, $color-white, reactangel);
+    position: relative;
+    z-index: 999;
+}
+
+.btn1::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: $color-blue-two;
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip-path: circle(50% at 0% 0%);
+    z-index: -999;
+    transition: 0.5s;
+    border-radius: 3px;
+}
+
+.btn1:hover.btn1::before {
+    width: 400px;
+    height: 400px;
 }
 
 .btn2 {
     @include btn($color-blue, $color-white, reactangel)
 }
+
+.btn2::before {
+    @extend .btn1::before;
+}
+
 
 .footer-container {
     background: linear-gradient(#322990a4, #322990a4), url('../img/2.jpg');
@@ -225,9 +255,14 @@ body {
     @include bodyCircle(100px, 400px, right)
 }
 
+.crud {
+    margin-top: 60px;
+}
+
 .about-content {
     width: 50%;
     padding: 0 4%;
+    color: $color-gray;
 }
 
 .about-content>blockquote {
@@ -248,15 +283,6 @@ body {
     vertical-align: middle;
 }
 
-marquee {
-    width: 90%;
-    background-color: $color-blue;
-    color: $color-white;
-    padding: 6px 0px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -273,71 +299,13 @@ marquee {
     @include bodyCircle(100px, 400px, right)
 }
 
-.card {
-    background-color: $color-white;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: 0 0 10px 10px #ede9e9;
-}
-
-.circle {
-    width: 100%;
-    height: 100%;
-    background-color: $color-black;
-    clip-path: circle(180px at center 0);
-    text-align: center;
-    position: relative;
-}
-
-.circle p {
-    color: $color-white;
-    font-size: 1.5em;
-    padding: 10px 0;
-}
-
-.circle h1 {
-    color: $color-white;
-    font-size: 3em;
-    padding: 5px 0;
-}
-
-.card .content {
-    position: absolute;
-    color: $color-black;
-    bottom: 50px;
-    text-align: center;
-}
-
 .sub-btn {
     @include btn($color-black, $color-white , circle);
     margin-top: 10px;
 }
 
-.card:nth-child(1) .circle,
-.card:nth-child(1) .sub-btn {
-    background-color: $color-blue;
-}
 
-.card:nth-child(2) .circle,
-.card:nth-child(2) .sub-btn {
-    background-color: $color-yellow;
-}
-
-.card:nth-child(3) .circle,
-.card:nth-child(3) .sub-btn {
-    background-color: $color-blue;
-}
-
-footer {
-    background-color: #322990a8;
-    color: $color-white;
-    text-align: center;
-    padding: 12px 0;
-    letter-spacing: 1px;
-}
-
+//mobile responsive start
 
 @media only screen and (max-width:698px) {
 
@@ -347,7 +315,7 @@ footer {
 
     .mobile-navbar-btn {
         display: block;
-        z-index: 999;
+        z-index: 9999;
     }
 
     .navbar {
@@ -360,7 +328,7 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 999;
+        z-index: 9999;
 
         transform: translateX(100%);
         transition: transform 0.3s linear;
@@ -415,6 +383,10 @@ footer {
     .about-container {
         flex-direction: column;
         padding: 30px 10px;
+    }
+
+    .crud {
+        margin-top: 10px;
     }
 
     .about-content {

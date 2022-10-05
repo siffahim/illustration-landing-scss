@@ -1,0 +1,14 @@
+$colors: (
+    color1:tomato,
+    color2:seagreen,
+    color3:olive
+);
+
+@each $key,
+$color in $colors {
+    .#{$color}-text {
+        color: $color;
+    }
+}
+
+//or we can use without list item,like: (@each $ver in tomato,seagreen{})
