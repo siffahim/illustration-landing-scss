@@ -27,6 +27,26 @@ html {
 body {
     font-family: firstFont;
     overflow-x: hidden;
+    position: relative;
+}
+
+@mixin bodyCircle($pos1, $pos2, $side) {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(145deg, #ffa8a8, #ff7643);
+    position: absolute;
+    clip-path: circle(50% at center);
+
+    @if $side ==left {
+        left: -$pos1;
+        top: $pos2;
+    }
+
+    @else if $side ==right {
+        right: -$pos1;
+        top: $pos2;
+    }
 }
 
 .header {
@@ -42,9 +62,13 @@ body {
     text-decoration: none;
     color: $color-white;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .navbar {
+    overflow: hidden;
+
     .navbar-list {
         display: flex;
         gap: 2rem;
@@ -96,6 +120,7 @@ body {
     padding: 0 100px;
     display: flex;
     align-items: center;
+    position: relative;
 
     h1 {
         font-size: 2em;
@@ -112,6 +137,15 @@ body {
         color: #000;
     }
 }
+
+.banner-container::before {
+    @include bodyCircle(100px, 80px, left)
+}
+
+.banner-container::after {
+    @include bodyCircle(100px, 400px, right)
+}
+
 
 @mixin btn($bg1, $color, $type) {
     background: $bg1;
@@ -142,14 +176,18 @@ body {
     @include btn($color-blue, $color-white, reactangel)
 }
 
+.footer-container {
+    background: linear-gradient(#322990a4, #322990a4), url('../img/2.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
 
 .project-overview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 20px;
-    padding: 40px 100px;
+    padding: 60px 100px;
     text-align: center;
-    background-color: $color-blue;
 }
 
 .project-overview>div {
@@ -160,22 +198,31 @@ body {
 }
 
 .project-overview>div>h1 {
-    font-size: 2em;
+    font-size: 1.8em;
     color: $color-white;
+}
+
+.project-overview>div>img {
+    width: 15%;
 }
 
 .project-overview>div:nth-child(n) {}
 
-.fa-brands {
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
 
 .about-container {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 10px 100px;
+    padding: 0px 100px;
+    position: relative;
+}
+
+.about-container::before {
+    @include bodyCircle(100px, 250px, left)
+}
+
+.about-container::after {
+    @include bodyCircle(100px, 450px, right)
 }
 
 .about-content {
@@ -183,14 +230,29 @@ body {
     padding: 0 4%;
 }
 
+.about-content>blockquote {
+    border-left: 4px solid;
+    border-image: linear-gradient($color-blue, $color-blue-two);
+    border-image-slice: 2;
+    margin-left: 12px;
+    background: #e5e5e5;
+    padding: 5px;
+    border-radius: 3px;
+}
+
 .about-media {
     width: 50%;
 }
 
+.about-media img {
+    vertical-align: middle;
+}
+
 marquee {
+    width: 90%;
     background-color: $color-blue;
     color: $color-white;
-    padding: 10px 10px;
+    padding: 6px 0px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -200,6 +262,15 @@ marquee {
     grid-template-columns: repeat(3, 1fr);
     padding: 20px 200px;
     grid-column-gap: 25px;
+    position: relative;
+}
+
+.card-container::before {
+    @include bodyCircle(100px, 80px, left)
+}
+
+.card-container::after {
+    @include bodyCircle(100px, 400px, right)
 }
 
 .card {
@@ -246,21 +317,21 @@ marquee {
 
 .card:nth-child(1) .circle,
 .card:nth-child(1) .sub-btn {
-    background-color: $color-yellow;
+    background-color: $color-blue;
 }
 
 .card:nth-child(2) .circle,
 .card:nth-child(2) .sub-btn {
-    background-color: $color-blue;
+    background-color: $color-yellow;
 }
 
 .card:nth-child(3) .circle,
 .card:nth-child(3) .sub-btn {
-    background-color: $color-pink;
+    background-color: $color-blue;
 }
 
 footer {
-    background-color: $color-black;
+    background-color: #322990a8;
     color: $color-white;
     text-align: center;
     padding: 12px 0;
@@ -281,7 +352,7 @@ footer {
 
     .navbar {
         width: 100%;
-        height: 100vh;
+        height: 100vh !important;
         background-color: $color-blue;
         position: absolute;
         top: 0;
@@ -289,9 +360,10 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 999;
 
         transform: translateX(100%);
-        transition: all 0.3s linear;
+        transition: transform 0.3s linear;
 
         opacity: 0;
         visibility: hidden;
@@ -342,12 +414,13 @@ footer {
 
     .about-container {
         flex-direction: column;
-        padding: 50px 10px;
+        padding: 30px 10px;
     }
 
     .about-content {
         width: 100%;
         padding: 0 10px;
+        order: 2;
     }
 
     .about-media {

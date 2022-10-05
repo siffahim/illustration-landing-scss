@@ -34,6 +34,7 @@ html {
 body {
   font-family: firstFont;
   overflow-x: hidden;
+  position: relative;
 }
 
 .header {
@@ -48,13 +49,23 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #4a4aed;
+  background-color: #312990;
 }
 
 .header .logo {
   text-decoration: none;
   color: #fff;
   font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar {
+  overflow: hidden;
 }
 
 .navbar .navbar-list {
@@ -111,6 +122,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .banner-container h1 {
@@ -128,8 +140,32 @@ body {
   color: #000;
 }
 
+.banner-container::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(145deg, #ffa8a8, #ff7643);
+  position: absolute;
+  -webkit-clip-path: circle(50% at center);
+          clip-path: circle(50% at center);
+  left: -100px;
+  top: 80px;
+}
+
+.banner-container::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(145deg, #ffa8a8, #ff7643);
+  position: absolute;
+  -webkit-clip-path: circle(50% at center);
+          clip-path: circle(50% at center);
+  right: -100px;
+  top: 400px;
+}
+
 .btn1 {
-  background: #4a4aed;
+  background: #312990;
   color: #fff;
   border: none;
   padding: 12px 15px;
@@ -139,7 +175,7 @@ body {
 }
 
 .btn2 {
-  background: #4a4aed;
+  background: #312990;
   color: #fff;
   border: none;
   padding: 12px 15px;
@@ -148,15 +184,21 @@ body {
   border-radius: 3px;
 }
 
+.footer-container {
+  background: -webkit-gradient(linear, left top, left bottom, from(#322990a4), to(#322990a4)), url("../img/2.jpg");
+  background: linear-gradient(#322990a4, #322990a4), url("../img/2.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
 .project-overview {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 20px;
-  padding: 40px 100px;
+  padding: 60px 100px;
   text-align: center;
-  background-color: #4a4aed;
 }
 
 .project-overview > div {
@@ -166,13 +208,12 @@ body {
 }
 
 .project-overview > div > h1 {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #fff;
 }
 
-.fa-brands {
-  font-size: 1.5em;
-  margin-bottom: 5px;
+.project-overview > div > img {
+  width: 15%;
 }
 
 .about-container {
@@ -183,7 +224,32 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 100px;
+  padding: 0px 100px;
+  position: relative;
+}
+
+.about-container::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(145deg, #ffa8a8, #ff7643);
+  position: absolute;
+  -webkit-clip-path: circle(50% at center);
+          clip-path: circle(50% at center);
+  left: -100px;
+  top: 250px;
+}
+
+.about-container::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(145deg, #ffa8a8, #ff7643);
+  position: absolute;
+  -webkit-clip-path: circle(50% at center);
+          clip-path: circle(50% at center);
+  right: -100px;
+  top: 450px;
 }
 
 .about-content {
@@ -191,14 +257,31 @@ body {
   padding: 0 4%;
 }
 
+.about-content > blockquote {
+  border-left: 4px solid;
+  -o-border-image: linear-gradient(#312990, #6a89fe);
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#312990), to(#6a89fe));
+     border-image: linear-gradient(#312990, #6a89fe);
+  border-image-slice: 2;
+  margin-left: 12px;
+  background: #e5e5e5;
+  padding: 5px;
+  border-radius: 3px;
+}
+
 .about-media {
   width: 50%;
 }
 
+.about-media img {
+  vertical-align: middle;
+}
+
 marquee {
-  background-color: #4a4aed;
+  width: 90%;
+  background-color: #312990;
   color: #fff;
-  padding: 10px 10px;
+  padding: 6px 0px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -210,6 +293,31 @@ marquee {
       grid-template-columns: repeat(3, 1fr);
   padding: 20px 200px;
   grid-column-gap: 25px;
+  position: relative;
+}
+
+.card-container::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(145deg, #ffa8a8, #ff7643);
+  position: absolute;
+  -webkit-clip-path: circle(50% at center);
+          clip-path: circle(50% at center);
+  left: -100px;
+  top: 80px;
+}
+
+.card-container::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(145deg, #ffa8a8, #ff7643);
+  position: absolute;
+  -webkit-clip-path: circle(50% at center);
+          clip-path: circle(50% at center);
+  right: -100px;
+  top: 400px;
 }
 
 .card {
@@ -264,21 +372,21 @@ marquee {
 
 .card:nth-child(1) .circle,
 .card:nth-child(1) .sub-btn {
-  background-color: #ffaf00;
+  background-color: #312990;
 }
 
 .card:nth-child(2) .circle,
 .card:nth-child(2) .sub-btn {
-  background-color: #4a4aed;
+  background-color: #ffaf00;
 }
 
 .card:nth-child(3) .circle,
 .card:nth-child(3) .sub-btn {
-  background-color: #da2268;
+  background-color: #312990;
 }
 
 footer {
-  background-color: black;
+  background-color: #322990a8;
   color: #fff;
   text-align: center;
   padding: 12px 0;
@@ -295,8 +403,8 @@ footer {
   }
   .navbar {
     width: 100%;
-    height: 100vh;
-    background-color: #4a4aed;
+    height: 100vh !important;
+    background-color: #312990;
     position: absolute;
     top: 0;
     left: 0;
@@ -309,10 +417,13 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    z-index: 999;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    -webkit-transition: all 0.3s linear;
-    transition: all 0.3s linear;
+    -webkit-transition: -webkit-transform 0.3s linear;
+    transition: -webkit-transform 0.3s linear;
+    transition: transform 0.3s linear;
+    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -365,11 +476,14 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 50px 10px;
+    padding: 30px 10px;
   }
   .about-content {
     width: 100%;
     padding: 0 10px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
   .about-media {
     width: 100%;
