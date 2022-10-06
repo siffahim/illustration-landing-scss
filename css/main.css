@@ -32,6 +32,8 @@ h3 {
   position: relative;
   -webkit-box-shadow: 0 0 10px 10px #ede9e9;
           box-shadow: 0 0 10px 10px #ede9e9;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .circle {
@@ -115,6 +117,8 @@ marquee {
   position: relative;
   -webkit-box-shadow: 0 0 10px 10px #ede9e9;
           box-shadow: 0 0 10px 10px #ede9e9;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .circle {
@@ -339,7 +343,7 @@ body {
   content: "";
   width: 50%;
   height: 100%;
-  background: #6a89fe;
+  background: tomato;
   position: absolute;
   left: 0;
   top: 0;
@@ -499,6 +503,22 @@ body {
           clip-path: circle(50% at center);
   right: -100px;
   top: 400px;
+}
+
+.card-container:hover .card {
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0.5;
+}
+
+.card-container .card:hover {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
 }
 
 .sub-btn {

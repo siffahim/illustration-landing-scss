@@ -182,7 +182,7 @@ body {
     content: "";
     width: 50%;
     height: 100%;
-    background: $color-blue-two;
+    background: tomato;
     position: absolute;
     left: 0;
     top: 0;
@@ -255,6 +255,7 @@ body {
     @include bodyCircle(100px, 400px, right)
 }
 
+
 .crud {
     margin-top: 60px;
 }
@@ -297,6 +298,18 @@ body {
 
 .card-container::after {
     @include bodyCircle(100px, 400px, right)
+}
+
+.card-container:hover .card {
+    filter: blur(20px);
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+
+.card-container .card:hover {
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 .sub-btn {
